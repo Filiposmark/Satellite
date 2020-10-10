@@ -28,7 +28,7 @@ void data(String req, String name) {
       float x = r * sin(theta) * cos(phi);
       float y = r * cos(theta);
       float z = r * sin(theta) * sin(phi);
-
+      
       //Gives the altitude on the sketch according to earth size and satillite altitude irl.
       float h = sele*r/earthr;
 
@@ -45,7 +45,7 @@ void data(String req, String name) {
       fill(255, 0, 0);
       sphere(2);
       rotate(-anglebetween, rv.x, rv.y, rv.z);
-      text(name,-textWidth(name),-10);
+      text(name,unitv.x,unitv.y,unitv.z);
       //println("lat: " + slat + ", "+"lon: "+ slon /*+", "+ "ele: "+z +", frames: "+frameCount*/);
       popMatrix();
 
