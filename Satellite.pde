@@ -1,21 +1,25 @@
 JSONObject json;
 JSONArray satellitedata;
+JSONArray satdat1;
+JSONArray satdat2;
 
 float x, y, z;
 int frames = 0;
 
-void data(String req) {
+void data(String req, String name) {
 
   if (frameCount >= frames) {
     frames += 300;
-    satellitedata = loadJSONObject(req).getJSONArray("positions");
+   //satellitedata = loadJSONObject(req);
+    satdat1 = loadJSONObject(req).getJSONArray("positions");
+
     
   }
   
 
 
-    for (int i=0; i < satellitedata.size(); i++) {
-      JSONObject sat = satellitedata.getJSONObject(i);
+    for (int i=0; i < satdat1.size(); i++) {
+      JSONObject sat = satdat1.getJSONObject(i);
       float slat = sat.getFloat("satlatitude");  
       float slon = -sat.getFloat("satlongitude");
       float sele = sat.getFloat("sataltitude");
@@ -40,6 +44,8 @@ void data(String req) {
       translate(h, 0, 0);
       fill(255, 0, 0);
       sphere(2);
+      rotate(-anglebetween, rv.x, rv.y, rv.z);
+      text(name,-textWidth(name),-10);
       //println("lat: " + slat + ", "+"lon: "+ slon /*+", "+ "ele: "+z +", frames: "+frameCount*/);
       popMatrix();
 

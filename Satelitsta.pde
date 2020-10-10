@@ -28,13 +28,15 @@ float r = 200;
 //Real
 String id = "29";
 //String url = "https://www.n2yo.com/rest/v1/satellite/positions/25544/41.702/-76.014/0/2/"; 
-String url = "https://www.n2yo.com/rest/v1/satellite/positions/";
+String url = "https://www.n2yo.com/rest/v1/satellite/";
+
+String pos = "positions/";
 String post = "/41.702/-76.014/0/2/";
 String apiKey = "&apiKey=PN6542-W8YK2Y-4VN8E8-4KIN";
-String request = url+ids[0]+post+apiKey;
-String request1 = url+ids[1]+post+apiKey;
-String request2 = url+ids[2]+post+apiKey;
-String request3 = url+ids[3]+post+apiKey;
+String request = url+pos+ids[0]+post+apiKey;
+String request1 = url+pos+ids[1]+post+apiKey;
+String request2 = url+pos+ids[2]+post+apiKey;
+String request3 = url+pos+ids[3]+post+apiKey;
 //String request;
 
 void setup() {
@@ -73,8 +75,11 @@ void draw() {
 
   //void conversion
   
-  //label();
-  data(request1);
+  
+  //data(request,"TIROS 1");
+  //data(request1,"SWIFT");
+  data(request2, "ISS");
+  //data(request3, "DELTA 1 R/B");
 
   
  
