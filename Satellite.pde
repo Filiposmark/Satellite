@@ -37,10 +37,7 @@ void data(String req, String name) {
     rotate(-anglebetween, rv.x, rv.y, rv.z);
     textSize(9);
     text(name, unitv.x, unitv.y, unitv.z);
-    //println("lat: " + slat + ", "+"lon: "+ slon /*+", "+ "ele: "+z +", frames: "+frameCount*/);
     popMatrix();
 
-
-    //println("MouseY: "+mouseY + ", y: " + y, "MouseX: " +mouseX + ", x: " + x);
   }
 }

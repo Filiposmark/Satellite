@@ -27,7 +27,7 @@ float earthr = 6371;
 float r = 200;
 //Real
 String id = "29";
-//String url = "https://www.n2yo.com/rest/v1/satellite/positions/25544/41.702/-76.014/0/2/"; 
+
 String url = "https://www.n2yo.com/rest/v1/satellite/";
 
 String pos = "positions/";
@@ -40,10 +40,10 @@ String request3 = url+pos+ids[3]+post+apiKey;
 
 String requ = request1; 
 String nam = "SWIFT";
-//String request;
+
 
 void setup() {
-  //json = loadJSONObject(request);
+
   noStroke();
   space = loadImage("space.jpg");
   earth = loadImage("world1.jpg");
@@ -119,19 +119,19 @@ void keyPressed() {
 void keyReleased() {
   if (key == 'a' || key == 'A') {
     rotY = 0;
-    //rotlY = 0;
+
   }
 
   if (key == 'd' || key == 'D') {
     rotY = 0;
-    //rotlY = 0;
+
   }
   if (key == 'w' || key == 'W') {
     rotX = 0;
-    //rotlX = 0;
+
   }
   if (key == 's' || key == 'S') {
     rotX = 0;
-    //rotlX = 0;
+
   }
 }
