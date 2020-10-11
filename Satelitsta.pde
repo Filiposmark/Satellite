@@ -63,23 +63,20 @@ void draw() {
 
   angleY += rotY;
   angleX += rotX;
-  //anglelX += rotlX;
-  //anglelY += rotlY;
+
   rotateY(angleY);
   rotateX(angleX);
-  //rotateY(anglelY);
-  //rotateX(anglelX);
+  
   fill(200);
   noStroke();
   shape(earth1); 
 
-  //void conversion
+  
   
   
   //data(request,"TIROS 1");
   //data(request1,"SWIFT");
   data(request2, "ISS");
-  
   //data(request3, "DELTA 1 R/B");
 
   
