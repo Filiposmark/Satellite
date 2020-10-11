@@ -17,7 +17,7 @@ float rotlX;
 float rotlY;
 
 //ids
-String[] ids = {"29","28485","25544","50"};
+String[] ids = {"29", "28485", "25544", "50"};
 
 
 //radius of the earth in real life.
@@ -37,6 +37,9 @@ String request = url+pos+ids[0]+post+apiKey;
 String request1 = url+pos+ids[1]+post+apiKey;
 String request2 = url+pos+ids[2]+post+apiKey;
 String request3 = url+pos+ids[3]+post+apiKey;
+
+String requ = request1; 
+String nam = "SWIFT";
 //String request;
 
 void setup() {
@@ -45,19 +48,15 @@ void setup() {
   space = loadImage("space.jpg");
   earth = loadImage("world1.jpg");
   iss = loadImage("iss.jpg");
-  satelite = createShape(SPHERE,2);
+  satelite = createShape(SPHERE, 2);
   satelite.setTexture(iss);
   earth1 = createShape(SPHERE, r);
   earth1.setTexture(earth);
   size(600, 600, P3D);
-  
-  
-
-
 }
 
 void draw() {
-    
+
   background(space);
   translate(width/2, height/2);
 
@@ -66,22 +65,18 @@ void draw() {
 
   rotateY(angleY);
   rotateX(angleX);
-  
+
   fill(200);
   noStroke();
-  shape(earth1); 
 
-  
-  
-  
-  //data(request,"TIROS 1");
-  //data(request1,"SWIFT");
-  data(request2, "ISS");
-  //data(request3, "DELTA 1 R/B");
+  if (started) {
+    shape(earth1);
+    data(requ, nam);
+  }
 
-  
- 
- 
+  if (!started) {
+    intro();
+  }
 }
 
 void keyPressed() {
@@ -102,6 +97,22 @@ void keyPressed() {
   if (key == 's' || key == 'S') {
     rotX = -0.01;
     //rotlX = 0.01;
+  }
+  if (key == 'v' || key == 'V') {
+    requ = request1; 
+    nam = "SWIFT";
+  }
+  if (key == 'c' || key == 'C') {
+    requ = request; 
+    nam = "TIROS 1";
+  }
+  if (key == 'b' || key == 'B') {
+    requ = request2;
+    nam = "ISS";
+  }
+  if (key == 'n' || key == 'N') {
+    requ = request3;
+    nam = "DELTA 1 R/B";
   }
 }
 

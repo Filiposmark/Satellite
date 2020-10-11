@@ -1,24 +1,11 @@
-JSONObject json;
-JSONArray satellitedata;
-JSONArray satdat3;
-JSONArray satdat2;
-JSONArray satdat1;
 JSONArray satdat;
-ArrayList <JSONObject> satellites = new ArrayList<JSONObject>();
-
 float x, y, z;
 int frames = 0;
-
-
-
-
-
 
 void data(String req, String name) {
 
   if (frameCount >= frames) {
-    frames += 300;
-    //satellitedata = loadJSONObject(req);
+    frames += 100;
     satdat = loadJSONObject(req).getJSONArray("positions");
   }
 
